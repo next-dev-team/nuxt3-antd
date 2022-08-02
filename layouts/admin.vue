@@ -2,13 +2,13 @@
   <a-layout id="layout">
     <layout-header />
     <a-layout-content id="content">
-      <div class="bg-white min-h-[90vh]">
-        <slot />
+      <div class=" flex ">
+        <layout-side-menu />
+        <main class="flex-1 min-w-0 overflow-auto h-[92.7vh]">
+          <slot />
+        </main>
       </div>
     </a-layout-content>
-    <a-layout-footer style="text-align: center">
-      UMPAY ©2022 All rights reserved
-    </a-layout-footer>
   </a-layout>
 </template>
 

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
-  middleware: 'auth',
+  layout: 'admin',
+  middleware: 'dashboard',
 })
 </script>
 
 <template>
-  <PagesHomepage />
+  <TemplateHomepage />
 </template>

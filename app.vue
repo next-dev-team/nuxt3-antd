@@ -1,8 +1,8 @@
 <script setup>
-import 'ant-design-vue/es/modal/style/index.css'
+import '@/styles/global.less'
 
 useHead({
-  title: 'Vitesse Nuxt',
+  title: 'UMPAY Merchant',
 })
 </script>
 
@@ -12,15 +12,3 @@ useHead({
   </NuxtLayout>
 </template>
 
-<style>
-html, body , #__nuxt{
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  background: #222;
-  color: white;
-}
-</style>

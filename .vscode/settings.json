@@ -6,7 +6,7 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "cSpell.words": [
     "ohmyfetch",
     "persistedstate"

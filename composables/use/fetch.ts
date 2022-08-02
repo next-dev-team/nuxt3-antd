@@ -1,14 +1,15 @@
 import { $fetch } from 'ohmyfetch'
 import { storeToRefs } from 'pinia'
+import { API_BASE_URL } from '~~/constants/env'
 
-export const useCustomFetch = $fetch.create({
-  baseURL: 'http://localhost:4000/',
+export const $useFetch = $fetch.create({
+  baseURL: API_BASE_URL,
   async onRequest({ options }) {
     const requestData = options.method === 'get' ? options.params : options.body
-    const { count } = storeToRefs(useCount())
+    const { token } = storeToRefs(useUserStore())
     options.headers = {
       ...options.headers,
-      customs: `count: ${count.value}`,
+      authorization: `Bearer ${token.value}`,
     }
     console.log('[fetch request]', requestData)
   },

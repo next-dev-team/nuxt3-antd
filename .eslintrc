@@ -1,6 +1,8 @@
 {
   "extends": "@antfu",
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "vue/html-self-closing": "off",
+    "vue/v-on-event-hyphenation": "off"
   }
 }

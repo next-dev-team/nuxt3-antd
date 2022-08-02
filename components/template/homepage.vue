@@ -13,13 +13,17 @@ const success = () => {
 </script>
 
 <template>
-  <ASpace>
-    <AButton type="primary" @click="success">
-      Primary Button1
-    </AButton>
-    <AButton type="primary" @click="success">
-      Primary Button
-    </AButton>
-  </ASpace>
+  <LayoutContent>
+    <LayoutSection>
+      <ASpace>
+        <AButton type="primary" @click="success">
+          Primary Button1
+        </AButton>
+        <AButton type="primary" @click="success">
+          Primary Button
+        </AButton>
+      </ASpace>
+    </LayoutSection>
+  </LayoutContent>
 </template>
 
