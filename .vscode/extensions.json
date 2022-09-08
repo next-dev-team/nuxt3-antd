@@ -1,3 +1,10 @@
 {
-  "recommendations": ["afzalsayed96.icones"]
+  "recommendations": [
+    "antfu.iconify",
+    "antfu.goto-alias",
+    "dbaeumer.vscode-eslint",
+    "vue.volar",
+    "afzalsayed96.icones",
+    "ant-design-vue.vscode-ant-design-vue-helper"
+  ]
 }

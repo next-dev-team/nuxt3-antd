@@ -1,0 +1,58 @@
+{
+  "Generate Nuxt 3 Page": {
+    "prefix": "g:page",
+    "body": [
+      "<script lang=\"ts\" setup>",
+      "definePageMeta({})",
+      "useHead(() => {})",
+      "const props = defineProps<{}>()",
+      "</script>",
+      "",
+      "<template>",
+      "  <LayoutContent>",
+      "    <LauoutSection>",
+      "      <div>PAGE_BODY</div>",
+      "    </LauoutSection>",
+      "  </LayoutContent>",
+      "</template>",
+      ""
+    ],
+    "description": "Generate Nuxt 3 Page"
+  },
+  "fetch path": {
+    "prefix": "g:path",
+    "body": [
+      "export const examFetch = async (",
+      "  opts?: CusFetchOption<AnyResponse, Recordable>,",
+      ") =>",
+      "  await _fetchUtil(`/api${opts?.idDetail}`, {",
+      "    ...opts,",
+      "  })",
+      ""
+    ],
+    "description": ""
+  },
+  "fetch post": {
+    "prefix": "g:post",
+    "body": [
+      "export const examFetchPost = async (opts?: CusFetchOption<AnyResponse, Recordable>) =>",
+      "  await _fetchUtil('/api', {",
+      "    ...opts,",
+      "    method: 'post',",
+      "  })",
+      ""
+    ],
+    "description": ""
+  },
+  "fetch get": {
+    "prefix": "g:get",
+    "body": [
+      "export const examFetchGet = async (opts?: CusFetchOption<AnyResponse, Recordable>) =>",
+      "  await _fetchUtil('/api', {",
+      "    ...opts,",
+      "  })",
+      ""
+    ],
+    "description": ""
+  }
+}

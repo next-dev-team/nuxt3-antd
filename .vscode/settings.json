@@ -1,0 +1,32 @@
+{
+  "prettier.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": true,
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "en",
+  // vs code setting.json
+  "tailwindCSS.experimental.classRegex": [
+    ["tw\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw1\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw2\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw3\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // suggection for props name include  Cls="bg-blue-700"
+    ["tw=[\"'`]([^\"'`]*)"],
+    ["Cls=[\"'`]([^\"'`]*)"],
+    ["Clx=[\"'`]([^\"'`]*)"],
+    ["className:.[\"'`]([^\"'`]*)"],
+    ["className:[\"'`]([^\"'`]*)"],
+    ["className:.clx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    "tw`([^`]*)",
+    "tw\\.style\\(`([^)]*)`\\)",
+    "tw\\.style\\(`([^)]*)\\)",
+    "twColor\\(`([^)]*)`\\)"
+  ],
+  "cSpell.words": ["Nuxt", "UMPAY"]
+}

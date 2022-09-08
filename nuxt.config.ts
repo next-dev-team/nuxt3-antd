@@ -9,6 +9,23 @@ import { antdTheme } from './tools/antdTheme';
 const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
+  ssr: true,
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        types: ['unplugin-icons/types/vue'],
+      },
+    },
+  },
+  modules: ['@vueuse/nuxt', 'nuxt-lodash'],
+  lodash: {
+    prefix: '_',
+    prefixSkip: ['is'],
+    exclude: ['map'],
+    alias: [
+      // ['camelCase', 'stringToCamelCase'], // => _StringToCamelCase
+    ],
+  },
   buildModules: ['unplugin-icons/nuxt'],
   components: {
     dirs: [
@@ -17,7 +34,7 @@ export default defineNuxtConfig({
         extensions: ['vue'],
       },
       {
-        path: '~/template',
+        path: '~/page-template',
         extensions: ['vue'],
         prefix: 'Template',
       },
@@ -27,7 +44,7 @@ export default defineNuxtConfig({
     dirs: [
       // Scan composables from nested directories
       'composables/**',
-      '',
+      'utils/**',
     ],
   },
   alias: {
