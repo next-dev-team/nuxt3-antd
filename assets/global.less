@@ -1,0 +1,100 @@
+@import './font.less';
+@import './variable.less';
+@import './color.less';
+@import 'ant-design-vue/es/modal/style/index.less';
+@import 'ant-design-vue/es/message/style/index.less';
+@import 'ant-design-vue/es/notification/style/index.less';
+@import 'ant-design-vue/es/drawer/style/index.less';
+@import 'ant-design-vue/es/popconfirm/style/index.less';
+@import './btn.less';
+
+.ant-descriptions-item-label {
+  @apply !font-medium opacity-90;
+}
+
+// will make $Modal.method without margin left
+.modal-content-full {
+  .ant-modal-confirm-content {
+    @apply !ml-0;
+  }
+  .ant-modal-body {
+    padding: 24px 26px 24px !important;
+  }
+}
+
+html,
+body {
+  font-family: UmpayPlex, Arial, sans-serif !important;
+}
+
+body {
+  background-color: #ffffff;
+  color: rgb(30, 35, 41);
+  font-size: 14px;
+  margin: 0;
+}
+
+#__nuxt {
+  height: 100vh;
+}
+
+html.dark {
+  background: #222;
+  color: white;
+}
+
+a {
+  font-weight: 500 !important;
+}
+
+/* Overwrite the default to keep the scrollbar always visible */
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.ant-image-preview-img {
+  display: initial;
+}
+
+tr.ant-table-measure-row {
+  visibility: collapse;
+}
+
+// otp verify code
+.otp-input {
+  width: 55px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid @border-color-base;
+  text-align: center;
+}
+
+.ant-layout {
+  background: @white !important;
+}
+
+/* Background colour of an input field with value */
+.otp-input.is-complete {
+  background-color: @content-bg;
+}
+
+.otp-input::-webkit-inner-spin-button,
+.otp-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// fixed ant color
+.anticon > * {
+  color: inherit;
+}
