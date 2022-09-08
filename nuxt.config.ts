@@ -1,76 +1,75 @@
-import path from 'path'
-import { defineNuxtConfig } from 'nuxt'
-import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { defineNuxtConfig } from 'nuxt';
+import Components from 'unplugin-vue-components/vite';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+import IconsResolver from 'unplugin-icons/resolver';
+import { antdTheme } from './tools/antdTheme';
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+
+const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
-  modules: [
-    '@vueuse/nuxt',
-    '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-
-  ],
-  autoImports: {
+  buildModules: ['unplugin-icons/nuxt'],
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        extensions: ['vue'],
+      },
+      {
+        path: '~/template',
+        extensions: ['vue'],
+        prefix: 'Template',
+      },
+    ],
+  },
+  imports: {
     dirs: [
       // Scan composables from nested directories
       'composables/**',
+      '',
     ],
   },
-  experimental: {
-    reactivityTransform: true,
-    viteNode: false,
+  alias: {
+    dayjs: 'dayjs/esm/',
   },
-  ssr: true,
-  // tailwindcss: {
-  //   cssPath: '~/assets/tailwind.css',
-  // },
+  build: {
+    transpile: [
+      'lodash-es',
+      isDev ? '' : '@babel/runtime', // building time: Could not resolve import "@babel/runtime/helpers/esm/objectSpread2.js"
+    ],
+  },
+  css: ['~/assets/global.less'],
   vite: {
-    // Windows hot fix
-    server: {
-      watch: {
-        usePolling: true,
-      },
-    },
-    plugins: [
-      Components({
-        resolvers: [AntDesignVueResolver({
-          resolveIcons: true,
-          importStyle: 'less',
-        })],
-        dts: 'types/components.d.ts',
-      }),
-    ],
-    resolve: {
-      alias: [
-        {
-          find: /^~/,
-          replacement: '',
-        },
-        {
-          find: '@',
-          replacement: path.resolve(__dirname, './'),
-        },
-      ],
+    ssr: {
+      noExternal: ['ant-design-vue', 'dayjs'],
     },
     css: {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
           // https://www.antdv.com/docs/vue/customize-theme/#Ant-Design-Vue-Less-variables
-          modifyVars: {
-            // tw primary 300
-            'primary-color': '#ffd12f',
-            // tw title 700
-            'btn-primary-color': '#1f2937',
-            // tw primary 500
-            'link-color': '#eab308',
-          },
+          modifyVars: antdTheme(),
         },
       },
     },
-    // @ts-expect-error: Missing ssr key
-    ssr: {
-      noExternal: ['moment', 'compute-scroll-into-view', 'ant-design-vue'],
-    },
+
+    plugins: [
+      Components({
+        resolvers: [
+          AntDesignVueResolver({ resolveIcons: true, importStyle: 'less' }),
+          IconsResolver({
+            prefix: 'Icon',
+          }),
+        ],
+        dts: 'types/components.d.ts',
+      }),
+    ],
+    esbuild: isDev
+      ? {}
+      : {
+          pure: !isDev ? ['console.log', 'console.warn', 'debugger'] : [],
+          legalComments: 'none',
+        },
   },
-})
+});
