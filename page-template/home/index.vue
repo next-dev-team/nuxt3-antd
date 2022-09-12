@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import Echart from './echart/index.vue';
+</script>
+
 <template>
   <div>
     <div
@@ -47,8 +51,7 @@
       </a-card>
 
       <TemplateHomeUser />
+      <Echart />
     </div>
   </div>
 </template>
-
-<script lang="ts" setup></script>

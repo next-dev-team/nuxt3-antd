@@ -53,6 +53,7 @@ export default defineNuxtConfig({
   build: {
     transpile: [
       'lodash-es',
+      'echarts',
       isDev ? '' : '@babel/runtime', // building time: Could not resolve import "@babel/runtime/helpers/esm/objectSpread2.js"
     ],
   },
