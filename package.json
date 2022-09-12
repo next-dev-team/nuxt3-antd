@@ -2,6 +2,7 @@
   "name": "nuxt3-ant-design",
   "private": true,
   "scripts": {
+    "build:cloudflare": "NITRO_PRESET=cloudflare nuxt build",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
