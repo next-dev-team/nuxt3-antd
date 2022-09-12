@@ -44,13 +44,12 @@ import Echart from './echart/index.vue';
           </NuxtLink>
         </template>
         <a-space>
-          <SmileOutlined style="font-size: 24px; color: green" />
+          <IconAntDesignSmileOutlined style="font-size: 24px; color: green" />
           <IconLogosFacebook style="font-size: 18px" />
           <IconEmojioneFlagForCambodia style="font-size: 19px" />
         </a-space>
       </a-card>
 
-      <TemplateHomeUser />
       <Echart />
     </div>
   </div>

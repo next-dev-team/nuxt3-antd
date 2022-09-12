@@ -26,6 +26,7 @@ pnpm  dev
 ## Known Issue
 
 - hot reload antd not working in folder pages so I move all UI to template folder
+- Auto import Antd design Icon must be with Prefix <IconAnt...
 - Antd Typescript issue
   TypeScript not working with LiteralUnion please change new LiteralUnion [here](node_modules/.pnpm/ant-design-vue@3.3.0-beta.3/node_modules/ant-design-vue/es/_util/type.d.ts)
 
