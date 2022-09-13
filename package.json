@@ -13,15 +13,16 @@
     "@iconify/json": "latest",
     "less": "^4.1.3",
     "nuxt": "3.0.0-rc.9",
-    "unplugin-icons": "^0.14.9",
-    "unplugin-vue-components": "^0.22.6",
     "nuxt-lodash": "^2.3.0",
+    "serve": "~14.0.1",
     "typescript": "^4.8.3",
-    "serve": "~14.0.1"
+    "unplugin-icons": "^0.14.9",
+    "unplugin-vue-components": "^0.22.6"
   },
   "dependencies": {
     "@vueuse/nuxt": "^9.2.0",
     "ant-design-vue": "^3.3.0-beta.3",
-    "echarts": "^5.3.3"
+    "echarts": "^5.3.3",
+    "pusher-js": "^7.4.0"
   }
 }

@@ -1,5 +1,14 @@
 <script lang="ts" setup>
 import Echart from './echart/index.vue';
+
+const { $pusher } = useNuxtApp();
+const channel = $pusher?.subscribe('private-umpay-gateway-payment');
+
+onMounted(() => {
+  channel?.bind('private-umpay-gateway-payment', (res: any) => {
+    _notification.info({ message: 'Pusher Test', description: res });
+  });
+});
 </script>
 
 <template>

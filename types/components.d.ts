@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     ARow: typeof import('ant-design-vue/es')['Row']
     ASpace: typeof import('ant-design-vue/es')['Space']
     ATag: typeof import('ant-design-vue/es')['Tag']
+    ATypographyText: typeof import('ant-design-vue/es')['TypographyText']
     ATypographyTitle: typeof import('ant-design-vue/es')['TypographyTitle']
     IconAntDesignSmileOutlined: typeof import('~icons/ant-design/smile-outlined')['default']
     IconEmojioneFlagForCambodia: typeof import('~icons/emojione/flag-for-cambodia')['default']
