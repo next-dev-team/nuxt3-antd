@@ -2,11 +2,10 @@
 import Echart from './echart/index.vue';
 import User from './user/index.vue';
 
-const { $pusher } = useNuxtApp();
-const channel = $pusher?.subscribe('private-umpay-gateway-payment');
+const channel = _pusher.subscribe('private-umpay-gateway-payment');
 
 onMounted(() => {
-  channel?.bind('private-umpay-gateway-payment', (res: any) => {
+  channel.bind('private-umpay-gateway-payment', (res: any) => {
     _notification.info({ message: 'Pusher Test', description: res });
   });
 });
