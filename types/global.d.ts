@@ -140,7 +140,7 @@ declare global {
     /**
      * Optional: e.g: /api/user-detail/1 => 1 is idDetail
      */
-    idDetail?: string;
+    idDetail?: string | number;
   };
 
   declare type OtpRef = {

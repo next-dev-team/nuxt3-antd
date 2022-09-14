@@ -12,7 +12,7 @@ specifiers:
   serve: ~14.0.1
   typescript: ^4.8.3
   unplugin-icons: ^0.14.9
-  unplugin-vue-components: ^0.22.6
+  unplugin-vue-components: ^0.22.7
 
 dependencies:
   '@vueuse/nuxt': 9.2.0_nuxt@3.0.0-rc.9
@@ -21,14 +21,14 @@ dependencies:
   pusher-js: 7.4.0
 
 devDependencies:
-  '@iconify/json': 2.1.106
+  '@iconify/json': 2.1.107
   less: 4.1.3
   nuxt: 3.0.0-rc.9_2wzr6r35r3kjmfnivbvr4ozjlq
   nuxt-lodash: 2.3.0
   serve: 14.0.1
   typescript: 4.8.3
   unplugin-icons: 0.14.9
-  unplugin-vue-components: 0.22.6
+  unplugin-vue-components: 0.22.7
 
 packages:
 
@@ -368,8 +368,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@iconify/json/2.1.106:
-    resolution: {integrity: sha512-wiA12Bn1Z7HggEh4YVh0zba2gWo08FArg4cnjkMIddX+pia9GMwyMWCaMBKWqWk1ZF3FOj2xkyzNatZoJFFksQ==}
+  /@iconify/json/2.1.107:
+    resolution: {integrity: sha512-VJUQI4SDyOoa+DefJ5jdY5dOju52QUNfbaV6+hgFEp7QoP5ae7ZfQo+GcKYf+mvLb56U3UJL/E25PMFqHcZcYw==}
     dependencies:
       '@iconify/types': 1.1.0
       pathe: 0.3.7
@@ -4578,8 +4578,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.22.6:
-    resolution: {integrity: sha512-QiOAjEHpAD/i4+B1nFJPhzRYMQpFJN/m/VM0zLVxGzHGtJW//2z0Iyq5eqYczZeRfj6v9pIyuVw7BdChgD4G6A==}
+  /unplugin-vue-components/0.22.7:
+    resolution: {integrity: sha512-MJEAKJF9bRykTRvJ4WXF0FNMAyt1PX3iwpu2NN+li35sAKjQv6sC1col5aZDLiwDZDo2AGwxNkzLJFKaun9qHw==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8

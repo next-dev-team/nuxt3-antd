@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import Echart from './echart/index.vue';
+import User from './user/index.vue';
 
 const { $pusher } = useNuxtApp();
 const channel = $pusher?.subscribe('private-umpay-gateway-payment');
@@ -58,7 +59,7 @@ onMounted(() => {
           <IconEmojioneFlagForCambodia style="font-size: 19px" />
         </a-space>
       </a-card>
-
+      <User />
       <Echart />
     </div>
   </div>

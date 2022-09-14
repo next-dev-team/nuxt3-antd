@@ -16,7 +16,14 @@ const userCreate = async (
     ...opts,
   });
 
+const userDelete = async (opts?: CusFetchOption) =>
+  await _fetchUtil(`/users/${opts?.idDetail}`, {
+    method: 'delete',
+    ...opts,
+  });
+
 export const _userApi = {
   userList,
   userCreate,
+  userDelete,
 };
