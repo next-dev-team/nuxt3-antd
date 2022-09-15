@@ -10,6 +10,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
   ssr: true,
+
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -31,7 +32,7 @@ export default defineNuxtConfig({
     dirs: [
       {
         path: '~/components',
-        extensions: ['vue'],
+        extensions: ['vue', 'tsx'],
       },
       {
         path: '~/page-template',

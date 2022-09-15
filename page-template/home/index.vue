@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import Echart from './echart/index.vue';
 import User from './user/index.vue';
 
@@ -59,6 +59,7 @@ onMounted(() => {
         </a-space>
       </a-card>
       <User />
+      <Test message="With TSX" />
       <Echart />
     </div>
   </div>
