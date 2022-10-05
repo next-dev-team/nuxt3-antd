@@ -16,9 +16,9 @@
     "nuxt": "3.0.0-rc.11",
     "nuxt-lodash": "^2.3.0",
     "serve": "~14.0.1",
-    "typescript": "^4.8.3",
-    "unplugin-icons": "^0.14.10",
-    "unplugin-vue-components": "^0.22.7"
+    "typescript": "latest",
+    "unplugin-icons": "latest",
+    "unplugin-vue-components": "latest"
   },
   "dependencies": {
     "@vueuse/nuxt": "^9.2.0",
