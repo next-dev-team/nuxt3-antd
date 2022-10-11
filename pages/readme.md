@@ -1,3 +1,3 @@
 # Issue
 
-- hot reload not working in pages folder
+- Antd hot reload not working in pages folder
