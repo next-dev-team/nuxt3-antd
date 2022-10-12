@@ -29,5 +29,6 @@ declare module '@vue/runtime-core' {
     IconRiDeleteBin6Line: typeof import('~icons/ri/delete-bin6-line')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StepForwardOutlined: typeof import('@ant-design/icons-vue')['StepForwardOutlined']
   }
 }
