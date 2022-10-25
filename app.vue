@@ -1,12 +1,12 @@
 <template>
   <div :style="{ padding: '4rem' }">
     <a-config-provider>
-      <a-row justify="space-between">
+      <!-- <a-row justify="space-between">
         <a-typography-title :level="3">
           Wellcome to {{ dp.name }}
         </a-typography-title>
-      </a-row>
-      <a-card title="Dependencies" size="small" style="margin-bottom: 30px">
+      </a-row> -->
+      <!-- <a-card title="Dependencies" size="small" style="margin-bottom: 30px">
         <a-space wrap>
           <a-tag
             v-for="(val, key, ind) of allDp"
@@ -30,7 +30,7 @@
             </NuxtLink>
           </a-tag>
         </a-space>
-      </a-card>
+      </a-card> -->
 
       <NuxtPage />
     </a-config-provider>
@@ -38,5 +38,5 @@
 </template>
 
 <script setup lang="ts">
-const allDp = _Omit({ ...dp.dependencies, ...dp.devDependencies }, 'serve');
+// const allDp = _Omit({ ...dp.dependencies, ...dp.devDependencies }, "serve");
 </script>

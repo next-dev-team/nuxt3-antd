@@ -15,6 +15,7 @@
     "codegen": "graphql-codegen --config ./codegen.yml"
   },
   "devDependencies": {
+    "nuxt-windicss": "^2.5.2",
     "@apollo/client": "3.7.0",
     "@graphql-codegen/add": "^3.2.1",
     "@graphql-codegen/cli": "^2.13.7",

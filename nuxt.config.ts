@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@vueuse/nuxt", "nuxt-lodash"],
+  modules: ["@vueuse/nuxt", "nuxt-lodash", "nuxt-windicss"],
   lodash: {
     prefix: "_",
     prefixSkip: ["is"],
@@ -60,7 +60,15 @@ export default defineNuxtConfig({
       isDev ? "" : "@babel/runtime", // building time: Could not resolve import "@babel/runtime/helpers/esm/objectSpread2.js"
     ],
   },
-  css: ["~/assets/global.less"],
+  css: [
+    // windi preflight
+    "virtual:windi-base.css",
+    // your stylesheets which overrides the preflight
+    "~/assets/global.less",
+    // windi extras
+    "virtual:windi-components.css",
+    "virtual:windi-utilities.css",
+  ],
   vite: {
     ssr: {
       noExternal: ["ant-design-vue", "dayjs"],
