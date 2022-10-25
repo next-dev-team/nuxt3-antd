@@ -5,6 +5,7 @@
     "build:cloudflare": "NITRO_PRESET=cloudflare nuxt build",
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:gen": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
