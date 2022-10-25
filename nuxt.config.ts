@@ -74,7 +74,10 @@ export default defineNuxtConfig({
         },
       },
     },
-
+    define: {
+      // fixed apollo client err
+      __DEV__: isDev.toString(),
+    },
     plugins: [
       Components({
         resolvers: [

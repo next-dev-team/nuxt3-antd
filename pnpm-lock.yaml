@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@apollo/client': ^3.5.0
+  '@apollo/client': 3.7.0
   '@graphql-codegen/add': ^3.2.1
   '@graphql-codegen/cli': ^2.13.7
   '@graphql-codegen/import-types-preset': ^2.2.5
