@@ -1,8 +1,8 @@
-import { tryOnUnmounted } from '@vueuse/core';
+import { tryOnUnmounted } from "@vueuse/core";
 
-export function useTimeoutFn(handle: Fn<any>, wait: number, native = false) {
+export function useTimeoutFn(handle: () => any, wait: number, native = false) {
   if (!isFunction(handle)) {
-    throw new Error('handle is not Function!');
+    throw new Error("handle is not Function!");
   }
 
   const { readyRef, stop, start } = useTimeoutRef(wait);
@@ -14,7 +14,7 @@ export function useTimeoutFn(handle: Fn<any>, wait: number, native = false) {
       (maturity) => {
         maturity && handle();
       },
-      { immediate: false },
+      { immediate: false }
     );
   }
   return { readyRef, stop, start };
@@ -23,7 +23,7 @@ export function useTimeoutFn(handle: Fn<any>, wait: number, native = false) {
 export function useTimeoutRef(wait: number) {
   const readyRef = ref(false);
 
-  let timer: TimeoutHandle;
+  let timer: NodeJS.Timeout;
   function stop(): void {
     readyRef.value = false;
     timer && window.clearTimeout(timer);

@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       // ['camelCase', 'stringToCamelCase'], // => _StringToCamelCase
     ],
   },
-  buildModules: ["unplugin-icons/nuxt"],
+  buildModules: ["unplugin-icons/nuxt", "./modules/apollo-module"],
   components: {
     dirs: [
       {
@@ -45,6 +45,7 @@ export default defineNuxtConfig({
       // Scan composables from nested directories
       "composables/**",
       "utils/**",
+      "graphql/**",
     ],
   },
   alias: {
@@ -55,6 +56,7 @@ export default defineNuxtConfig({
       "lodash-es",
       "@ant-design/icons-vue",
       "echarts",
+      "graphql",
       isDev ? "" : "@babel/runtime", // building time: Could not resolve import "@babel/runtime/helpers/esm/objectSpread2.js"
     ],
   },

@@ -1,0 +1,34 @@
+schema: https://graphqlzero.almansi.me/api
+overwrite: true
+documents: "**/**.gql"
+
+generates:
+  # Get schemas from server
+  graphql/schemas.ts:
+    plugins:
+      - typescript
+
+  # Create operations based on queries
+  graphql/operations.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./schemas
+    plugins:
+      - typescript-operations
+
+  # 1. Export GraphQL documents
+  # 2. React interface
+  graphql/hooks.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./operations
+    plugins:
+      - typescript-vue-apollo
+    config:
+      # Optionals
+      vueCompositionApiImportFrom: vue
+
+# Format files
+hooks:
+  afterAllFileWrite:
+    - prettier --write

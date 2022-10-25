@@ -1,12 +1,13 @@
-<script lang="tsx" setup>
-import Echart from './echart/index.vue';
-import User from './user/index.vue';
+<script lang="ts" setup>
+import Echart from "./echart/index.vue";
+import User from "./user/index.vue";
+const { result } = await useAllPostsQuery();
 
-const channel = _pusher.subscribe('private-umpay-gateway-payment');
+const channel = _pusher.subscribe("private-umpay-gateway-payment");
 
 onMounted(() => {
-  channel.bind('private-umpay-gateway-payment', (res: any) => {
-    _notification.info({ message: 'Pusher Test', description: res });
+  channel.bind("private-umpay-gateway-payment", (res: any) => {
+    _notification.info({ message: "Pusher Test", description: res });
   });
 });
 </script>
@@ -20,6 +21,7 @@ onMounted(() => {
         gap: '20px',
       }"
     >
+      <h1>GraphQL response: {{ result?.posts?.data?.[0] }}</h1>
       <a-card bordered title="Antd Feedback" size="small">
         <a-space>
           <a-button type="primary" @click="_message.info('hello')"

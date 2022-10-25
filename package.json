@@ -8,16 +8,29 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
-    "upgrade-nuxt": "npx nuxi@latest upgrade --force"
+    "upgrade-nuxt": "npx nuxi@latest upgrade --force",
+    "generate:gen": "yarn codegen",
+    "start:gen": "graphql-codegen --config ./codegen.yml --watch",
+    "codegen": "graphql-codegen --config ./codegen.yml"
   },
   "devDependencies": {
+    "@apollo/client": "^3.7.0",
+    "@graphql-codegen/add": "^3.2.1",
+    "@graphql-codegen/cli": "^2.13.7",
+    "@graphql-codegen/import-types-preset": "^2.2.5",
+    "@graphql-codegen/typescript": "^2.8.0",
+    "@graphql-codegen/typescript-operations": "^2.5.5",
+    "@graphql-codegen/typescript-vue-apollo": "^3.3.5",
     "@iconify/json": "^2.1.127",
+    "@vue/apollo-composable": "^4.0.0-beta.1",
+    "graphql": "^16.6.0",
     "less": "^4.1.3",
     "nuxt": "3.0.0-rc.12",
     "nuxt-lodash": "^2.3.0",
     "typescript": "^4.8.4",
     "unplugin-icons": "^0.14.12",
-    "unplugin-vue-components": "^0.22.9"
+    "unplugin-vue-components": "^0.22.9",
+    "@milahu/patch-package": "^6.4.14"
   },
   "dependencies": {
     "@vueuse/nuxt": "^9.3.1",
