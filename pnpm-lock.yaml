@@ -20,6 +20,7 @@ specifiers:
   nuxt-lodash: ^2.3.0
   nuxt-windicss: ^2.5.2
   pinia: ^2.0.23
+  prettier: ^2.7.1
   pusher-js: ^7.4.0
   type-graphql: ^1.1.1
   typescript: ^4.8.4
@@ -49,6 +50,7 @@ devDependencies:
   nuxt: 3.0.0-rc.12_ztpum2tjzes4tenqs66soz264y
   nuxt-lodash: 2.3.0
   nuxt-windicss: 2.5.2
+  prettier: 2.7.1
   type-graphql: 1.1.1_graphql@16.6.0
   typescript: 4.8.4
   unplugin-icons: 0.14.12
@@ -5816,6 +5818,12 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
 
   /pretty-bytes/6.0.0:
     resolution: {integrity: sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==}

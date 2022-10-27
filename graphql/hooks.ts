@@ -5,93 +5,94 @@ import * as VueApolloComposable from "@vue/apollo-composable";
 import * as VueCompositionApi from "vue";
 export type ReactiveFunction<TParam> = () => TParam;
 
-export const AllPostsDocument = gql`
-  query allPosts($options: PageQueryOptions) {
-    posts(options: $options) {
-      data {
+export const StockDocument = gql`
+  query stock($page: Int, $offset: Int, $limit: Int) {
+    stock(page: $page, offset: $offset, limit: $limit) {
+      id
+      status
+      title
+      produc_thumnail {
         id
-        title
-      }
-      meta {
-        totalCount
       }
     }
   }
 `;
 
 /**
- * __useAllPostsQuery__
+ * __useStockQuery__
  *
- * To run a query within a Vue component, call `useAllPostsQuery` and pass it any options that fit your needs.
- * When your component renders, `useAllPostsQuery` returns an object from Apollo Client that contains result, loading and error properties
+ * To run a query within a Vue component, call `useStockQuery` and pass it any options that fit your needs.
+ * When your component renders, `useStockQuery` returns an object from Apollo Client that contains result, loading and error properties
  * you can use to render your UI.
  *
  * @param variables that will be passed into the query
  * @param options that will be passed into the query, supported options are listed on: https://v4.apollo.vuejs.org/guide-composable/query.html#options;
  *
  * @example
- * const { result, loading, error } = useAllPostsQuery({
- *   options: // value for 'options'
+ * const { result, loading, error } = useStockQuery({
+ *   page: // value for 'page'
+ *   offset: // value for 'offset'
+ *   limit: // value for 'limit'
  * });
  */
-export function useAllPostsQuery(
+export function useStockQuery(
   variables:
-    | Types.AllPostsQueryVariables
-    | VueCompositionApi.Ref<Types.AllPostsQueryVariables>
-    | ReactiveFunction<Types.AllPostsQueryVariables> = {},
+    | Types.StockQueryVariables
+    | VueCompositionApi.Ref<Types.StockQueryVariables>
+    | ReactiveFunction<Types.StockQueryVariables> = {},
   options:
     | VueApolloComposable.UseQueryOptions<
-        Types.AllPostsQuery,
-        Types.AllPostsQueryVariables
+        Types.StockQuery,
+        Types.StockQueryVariables
       >
     | VueCompositionApi.Ref<
         VueApolloComposable.UseQueryOptions<
-          Types.AllPostsQuery,
-          Types.AllPostsQueryVariables
+          Types.StockQuery,
+          Types.StockQueryVariables
         >
       >
     | ReactiveFunction<
         VueApolloComposable.UseQueryOptions<
-          Types.AllPostsQuery,
-          Types.AllPostsQueryVariables
+          Types.StockQuery,
+          Types.StockQueryVariables
         >
       > = {}
 ) {
   return VueApolloComposable.useQuery<
-    Types.AllPostsQuery,
-    Types.AllPostsQueryVariables
-  >(AllPostsDocument, variables, options);
+    Types.StockQuery,
+    Types.StockQueryVariables
+  >(StockDocument, variables, options);
 }
-export function useAllPostsLazyQuery(
+export function useStockLazyQuery(
   variables:
-    | Types.AllPostsQueryVariables
-    | VueCompositionApi.Ref<Types.AllPostsQueryVariables>
-    | ReactiveFunction<Types.AllPostsQueryVariables> = {},
+    | Types.StockQueryVariables
+    | VueCompositionApi.Ref<Types.StockQueryVariables>
+    | ReactiveFunction<Types.StockQueryVariables> = {},
   options:
     | VueApolloComposable.UseQueryOptions<
-        Types.AllPostsQuery,
-        Types.AllPostsQueryVariables
+        Types.StockQuery,
+        Types.StockQueryVariables
       >
     | VueCompositionApi.Ref<
         VueApolloComposable.UseQueryOptions<
-          Types.AllPostsQuery,
-          Types.AllPostsQueryVariables
+          Types.StockQuery,
+          Types.StockQueryVariables
         >
       >
     | ReactiveFunction<
         VueApolloComposable.UseQueryOptions<
-          Types.AllPostsQuery,
-          Types.AllPostsQueryVariables
+          Types.StockQuery,
+          Types.StockQueryVariables
         >
       > = {}
 ) {
   return VueApolloComposable.useLazyQuery<
-    Types.AllPostsQuery,
-    Types.AllPostsQueryVariables
-  >(AllPostsDocument, variables, options);
+    Types.StockQuery,
+    Types.StockQueryVariables
+  >(StockDocument, variables, options);
 }
-export type AllPostsQueryCompositionFunctionResult =
+export type StockQueryCompositionFunctionResult =
   VueApolloComposable.UseQueryReturn<
-    Types.AllPostsQuery,
-    Types.AllPostsQueryVariables
+    Types.StockQuery,
+    Types.StockQueryVariables
   >;

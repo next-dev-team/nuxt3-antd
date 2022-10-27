@@ -1,18 +1,18 @@
 import * as Types from "./schemas";
 
-export type AllPostsQueryVariables = Types.Exact<{
-  options?: Types.InputMaybe<Types.PageQueryOptions>;
+export type StockQueryVariables = Types.Exact<{
+  page?: Types.InputMaybe<Types.Scalars["Int"]>;
+  offset?: Types.InputMaybe<Types.Scalars["Int"]>;
+  limit?: Types.InputMaybe<Types.Scalars["Int"]>;
 }>;
 
-export type AllPostsQuery = {
+export type StockQuery = {
   __typename?: "Query";
-  posts?: {
-    __typename?: "PostsPage";
-    data?: Array<{
-      __typename?: "Post";
-      id?: string | null;
-      title?: string | null;
-    } | null> | null;
-    meta?: { __typename?: "PageMetadata"; totalCount?: number | null } | null;
-  } | null;
+  stock: Array<{
+    __typename?: "stock";
+    id: string;
+    status?: string | null;
+    title?: string | null;
+    produc_thumnail?: { __typename?: "directus_files"; id: string } | null;
+  }>;
 };

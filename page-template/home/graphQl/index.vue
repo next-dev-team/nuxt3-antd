@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-const { result, loading, refetch } = useAllPostsQuery();
+const { result, loading, refetch } = useStockQuery();
+
+watchEffect(() => {
+  console.log("result", result.value?.stock);
+});
+const ASSETS = "https://dwmniez7.directus.app/assets/";
 </script>
 
 <template>
@@ -10,107 +15,47 @@ const { result, loading, refetch } = useAllPostsQuery();
         @click="refetch"
       />
     </template>
-    <ARow :gutter="[30, 30]">
+    <ARow :gutter="[40, 40]">
       <ASkeleton :loading="loading">
-        <a-col
-          :span="8"
-          v-for="(item, index) in result?.posts?.data"
-          :key="index"
-        >
-          <a href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
-            <img
-              alt="Home"
-              src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-              class="h-56 w-full rounded-md object-cover"
-            />
+        <a-col :span="6" v-for="(item, index) in result?.stock" :key="index">
+          <div>
+            <a
+              href="#"
+              class="group h-96 block bg-gray-100 rounded-t-lg overflow-hidden relative"
+            >
+              <img
+                :src="ASSETS + item?.produc_thumnail?.id"
+                loading="lazy"
+                alt="Photo by Austin Wade"
+                class="w-full h-full object-contain object-center group-hover:scale-110 transition duration-200"
+              />
 
-            <div class="mt-2">
-              <dl>
-                <div>
-                  <dt class="sr-only">Price</dt>
+              <span
+                class="bg-red-500 text-white text-sm font-semibold tracking-wider uppercase rounded-r-lg absolute left-0 top-3 px-3 py-1.5"
+                >-50%</span
+              >
+            </a>
 
-                  <dd class="text-sm text-gray-500">$ {{ item?.id }}40,000</dd>
-                </div>
+            <div
+              class="flex justify-between items-start bg-gray-100 rounded-b-lg gap-2 p-4"
+            >
+              <div class="flex flex-col">
+                <a
+                  href="#"
+                  class="text-gray-800 hover:text-gray-500 lg:text-lg font-bold transition duration-100"
+                  >{{ item?.title }}</a
+                >
+                <span class="text-gray-500 text-sm lg:text-base"
+                  >by Fancy Brand</span
+                >
+              </div>
 
-                <div>
-                  <dt class="sr-only">Address</dt>
-
-                  <dd class="font-medium">{{ item?.title }}</dd>
-                </div>
-              </dl>
-
-              <div class="mt-6 flex items-center gap-8 text-xs">
-                <div class="sm:inline-flex sm:shrink-0 sm:items-center">
-                  <svg
-                    class="h-4 w-4 text-indigo-700"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                    />
-                  </svg>
-
-                  <div class="mt-1.5 sm:ml-3 sm:mt-0">
-                    <p class="text-gray-500">Parking</p>
-
-                    <p class="font-medium">2 spaces</p>
-                  </div>
-                </div>
-
-                <div class="sm:inline-flex sm:shrink-0 sm:items-center">
-                  <svg
-                    class="h-4 w-4 text-indigo-700"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
-
-                  <div class="mt-1.5 sm:ml-3 sm:mt-0">
-                    <p class="text-gray-500">Bathroom</p>
-
-                    <p class="font-medium">2 rooms</p>
-                  </div>
-                </div>
-
-                <div class="sm:inline-flex sm:shrink-0 sm:items-center">
-                  <svg
-                    class="h-4 w-4 text-indigo-700"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
-                  </svg>
-
-                  <div class="mt-1.5 sm:ml-3 sm:mt-0">
-                    <p class="text-gray-500">Bedroom</p>
-
-                    <p class="font-medium">4 rooms</p>
-                  </div>
-                </div>
+              <div class="flex flex-col items-end">
+                <span class="text-gray-600 lg:text-lg font-bold">$19.99</span>
+                <span class="text-red-500 text-sm line-through">$39.99</span>
               </div>
             </div>
-          </a>
+          </div>
         </a-col>
       </ASkeleton>
     </ARow>

@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxt) => {
   const httpLink = createHttpLink({
     uri:
       runtimeConfig.public.LEADGEN_SERVICE_NAME ||
-      "https://graphqlzero.almansi.me/api",
+      "https://dwmniez7.directus.app/graphql",
   });
   const cache = new InMemoryCache();
   let apolloClient;
@@ -23,7 +23,7 @@ export default defineNuxtPlugin((nuxt) => {
         {
           uri:
             runtimeConfig.public.LEADGEN_SERVICE_NAME ||
-            "https://graphqlzero.almansi.me/api",
+            "https://dwmniez7.directus.app/graphql",
         },
         {
           ssrMode: true,
@@ -44,7 +44,7 @@ export default defineNuxtPlugin((nuxt) => {
         {
           uri:
             runtimeConfig.public.LEADGEN_SERVICE_NAME ||
-            "https://graphqlzero.almansi.me/api",
+            "https://dwmniez7.directus.app/graphql",
         },
         {
           link: httpLink,

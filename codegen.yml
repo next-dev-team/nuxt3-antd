@@ -1,4 +1,4 @@
-schema: https://graphqlzero.almansi.me/api
+schema: https://dwmniez7.directus.app/graphql
 overwrite: true
 documents: "**/**.gql"
 

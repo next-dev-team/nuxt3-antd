@@ -1,11 +1,10 @@
-query allPosts($options: PageQueryOptions) {
-  posts(options: $options) {
-    data {
+query stock($page: Int, $offset: Int, $limit: Int) {
+  stock(page: $page, offset: $offset, limit: $limit) {
+    id
+    status
+    title
+    produc_thumnail {
       id
-      title
-    }
-    meta {
-      totalCount
     }
   }
 }
