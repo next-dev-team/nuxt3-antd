@@ -27,7 +27,7 @@
     "@vue/apollo-composable": "^4.0.0-beta.1",
     "graphql": "^16.6.0",
     "less": "^4.1.3",
-    "nuxt": "3.0.0-rc.12",
+    "nuxt": "3.0.0-rc.13",
     "nuxt-lodash": "^2.3.0",
     "nuxt-windicss": "^2.5.2",
     "prettier": "^2.7.1",
