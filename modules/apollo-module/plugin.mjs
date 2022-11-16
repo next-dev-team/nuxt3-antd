@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxt) => {
 
   const httpLink = createHttpLink({
     uri:
-      runtimeConfig.public.LEADGEN_SERVICE_NAME ||
+      // runtimeConfig.public.LEADGEN_SERVICE_NAME ||
       "https://dwmniez7.directus.app/graphql",
   });
   const cache = new InMemoryCache();
@@ -22,7 +22,7 @@ export default defineNuxtPlugin((nuxt) => {
       Object.assign(
         {
           uri:
-            runtimeConfig.public.LEADGEN_SERVICE_NAME ||
+            // runtimeConfig.public.LEADGEN_SERVICE_NAME ||
             "https://dwmniez7.directus.app/graphql",
         },
         {
@@ -43,7 +43,7 @@ export default defineNuxtPlugin((nuxt) => {
       Object.assign(
         {
           uri:
-            runtimeConfig.public.LEADGEN_SERVICE_NAME ||
+            // runtimeConfig.public.LEADGEN_SERVICE_NAME ||
             "https://dwmniez7.directus.app/graphql",
         },
         {

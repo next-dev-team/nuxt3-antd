@@ -17,7 +17,13 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@vueuse/nuxt", "nuxt-lodash", "nuxt-windicss"],
+  modules: [
+    "@vueuse/nuxt",
+    "nuxt-lodash",
+    "nuxt-windicss",
+    // "unplugin-icons/nuxt",
+    "./modules/apollo-module",
+  ],
   lodash: {
     prefix: "_",
     prefixSkip: ["is"],
@@ -26,7 +32,6 @@ export default defineNuxtConfig({
       // ['camelCase', 'stringToCamelCase'], // => _StringToCamelCase
     ],
   },
-  buildModules: ["unplugin-icons/nuxt", "./modules/apollo-module"],
   components: {
     dirs: [
       {
@@ -89,9 +94,9 @@ export default defineNuxtConfig({
     plugins: [
       Components({
         resolvers: [
-          IconsResolver({
-            prefix: "Icon",
-          }),
+          // IconsResolver({
+          //   prefix: "Icon",
+          // }),
           // resolveIcons true will error with NITRO_PRESET=cloudflare
           AntDesignVueResolver({ resolveIcons: true, importStyle: "less" }),
         ],

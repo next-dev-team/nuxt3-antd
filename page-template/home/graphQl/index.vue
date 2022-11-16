@@ -10,10 +10,10 @@ const ASSETS = "https://dwmniez7.directus.app/assets/";
 <template>
   <ACard size="small" title="Graph Ql with SSR">
     <template #extra>
-      <IconMajesticonsReloadCircle
+      <!-- <IconMajesticonsReloadCircle
         class="text-2xl cursor-pointer hover:opacity-80"
         @click="refetch"
-      />
+      /> -->
     </template>
     <ARow :gutter="[40, 40]">
       <ASkeleton :loading="loading">
