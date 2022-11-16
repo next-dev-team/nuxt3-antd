@@ -1,6 +1,6 @@
 {
   "name": "nuxt3-antd",
-  "version": "0.0.1-rc.14",
+  "version": "0.0.2-rc.14",
   "private": true,
   "scripts": {
     "build:cloudflare": "NITRO_PRESET=cloudflare nuxt build",

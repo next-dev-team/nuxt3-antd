@@ -3,7 +3,7 @@ NODE_VERSION = "16"
 NPM_FLAGS = "--version"
 
 [build]
-command = "npx pnpm i --no-frozen-lockfile --store=node_modules/.pnpm-store && npx pnpm run build:pre"
+command = "npx pnpm i --no-frozen-lockfile --store=node_modules/.pnpm-store && npx pnpm run build"
 publish = "dist"
 
 [[redirects]]
