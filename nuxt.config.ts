@@ -24,6 +24,8 @@ export default defineNuxtConfig({
     // "unplugin-icons/nuxt",
     "./modules/apollo-module",
   ],
+  //@ts-ignore
+  buildModules: [], // fixed some libraries not yet updated to nuxt 3.0.0
   lodash: {
     prefix: "_",
     prefixSkip: ["is"],
