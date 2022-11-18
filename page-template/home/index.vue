@@ -10,5 +10,8 @@ const activeKey = ref("1");
     <a-tab-pane key="2" tab="User CRUD">
       <TemplateHomeUser />
     </a-tab-pane>
+    <a-tab-pane key="3" tab="EchatJs">
+      <TemplateHomeEchart />
+    </a-tab-pane>
   </a-tabs>
 </template>
