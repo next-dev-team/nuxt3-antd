@@ -24,6 +24,9 @@ declare module '@vue/runtime-core' {
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     ATypographyText: typeof import('ant-design-vue/es')['TypographyText']
+    IconAntDesignSmileOutlined: typeof import('~icons/ant-design/smile-outlined')['default']
+    IconLogosFacebook: typeof import('~icons/logos/facebook')['default']
+    IconRiDeleteBin6Line: typeof import('~icons/ri/delete-bin6-line')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

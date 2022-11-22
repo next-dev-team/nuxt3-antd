@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-lodash",
     "nuxt-windicss",
-    // "unplugin-icons/nuxt",
+    "unplugin-icons/nuxt",
     "./modules/apollo-module",
   ],
   //@ts-ignore
@@ -96,9 +96,9 @@ export default defineNuxtConfig({
     plugins: [
       Components({
         resolvers: [
-          // IconsResolver({
-          //   prefix: "Icon",
-          // }),
+          IconsResolver({
+            prefix: "Icon",
+          }),
           // resolveIcons true will error with NITRO_PRESET=cloudflare
           AntDesignVueResolver({ resolveIcons: true, importStyle: "less" }),
         ],
