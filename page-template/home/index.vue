@@ -5,7 +5,7 @@ const activeKey = ref("1");
 <template>
   <a-tabs v-model:activeKey="activeKey">
     <a-tab-pane key="1" tab="Graph QL">
-      <TemplateHomeGraphQl />
+      <!-- <TemplateHomeGraphQl /> -->
       <IconAntDesignSmileOutlined style="font-size: 24px; color: green" />
       <IconLogosFacebook style="font-size: 18px" />
     </a-tab-pane>
