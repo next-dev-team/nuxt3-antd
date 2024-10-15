@@ -1,3 +1,6 @@
+# DISCONTINUE 
+Since now official repo is supported https://github.com/vueComponent/ant-design-vue-nuxt/tree/main
+
 # Nuxt 3 Boilerplate with Ant Design
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
